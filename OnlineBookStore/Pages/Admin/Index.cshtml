@@ -1,0 +1,27 @@
+﻿@page "/admin"
+
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+
+@model OnlineBookStore.Pages.Admin.IndexModel
+@{
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link href="~lib/css/bootstrap.min/css" rel="stylesheet"/>
+    <base href="/"/> <!--base tag specifies the base URL and/or target for all relative URLs-->
+</head>
+
+<body>
+
+    @*<component type="typeof(OnlineBookStore.Pages.Admin.Routed)" render-mode="Server" />*@
+    <component type="typeof(Routed)" render-mode="Server" />
+    <script src="/_framework/blazor.server.js"></script>
+
+</body>
+
+</html>

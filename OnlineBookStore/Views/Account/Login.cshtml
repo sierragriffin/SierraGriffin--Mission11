@@ -1,0 +1,52 @@
+﻿<!-- View for administrator login page -->
+
+@{
+    Layout = null;
+}
+
+@model LoginModel
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Online Bookstore Login</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body style="background-color: #cacd92">
+
+    <div class="bg-dark text-white-50 p-2 text-center">
+        <span class="navbar-brand m-l-2 border border-white text-center">ONLINE BOOKSTORE</span>
+    </div>
+
+    <div class="m-1 p-1">
+
+        <div class="text-danger" asp-validation-summary="All"></div>
+
+        <form method="post" asp-controller="Account" asp-action="Login">
+            <div class="form-group">
+                <label asp-for="Username">User Name:</label>
+                <input asp-for="Username" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Password">Password:</label>
+                <input asp-for="Password" class="form-control" type="password" />
+            </div>
+
+            <br />
+            @*<button class="shadow-sm p-3 mb-5 bg-light rounded" type="submit">Log In</button>*@
+            <button class="btn btn-outline-primary text-uppercase" type="submit">Log In</button>
+            @*<button class="btn btn-lg btn-block text-uppercase" type="submit">Log In</button>*@
+
+            <input type="hidden" asp-for="ReturnUrl" />
+        </form>
+
+    </div>
+
+</body>
+
+</html>

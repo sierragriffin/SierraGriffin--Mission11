@@ -1,0 +1,43 @@
+﻿<!--Partial View for Book Summary-->
+@{
+}
+
+@model Book
+
+<div class="card card-outline-primary m-1 p-1" style="background-color:#fcebe6">
+
+    <!--list book information-->
+    <div class="bg-light p-1">
+        <h3>@Model.Title</h3>
+
+        <span class="badge bg-info" style="float:right">
+            <small>@Model.Price.ToString("c")</small>
+        </span>
+    </div>
+
+    <div class="card-text m-1 p-1">
+        <ul class="list-unstyled">
+            <li>Author: <small class="text-muted">@Model.Author</small></li>
+            <li>Publisher: <small class="text-muted">@Model.Publisher</small></li>
+            <li>ISBN: <small class="text-muted">@Model.Isbn</small></li>
+            <li>Classification: <small class="text-muted">@Model.Classification</small></li>
+            <li>Category: <small class="text-muted">@Model.Category</small></li>
+            <li>Number of Pages: <small class="text-muted">@Model.PageCount</small></li>
+        </ul>
+    </div>
+
+    <!--redirection to AddToCart page-->
+    <form method="post" asp-page="/AddToCart">
+
+        <input type="hidden" asp-for="@Model.BookId"/>
+        <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()"/>
+
+        <span class="card-text">
+            <button type="submit" class="btn btn-success btn-sm float-end">Add to Cart</button>
+        </span>
+
+    </form>
+
+</div>
+
+

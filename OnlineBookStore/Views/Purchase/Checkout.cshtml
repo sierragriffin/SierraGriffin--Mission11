@@ -1,0 +1,83 @@
+﻿<!--Checkout Page View-->
+
+@{
+    ViewData["Title"] = "Checkout";
+}
+
+@model Purchase
+
+<h2>Check out now</h2>
+<p>Please enter your details to confirm your book order!</p>
+
+<!--Form for user to enter their information-->
+<form method="post" asp-controller="Purchase" asp-action="Checkout">
+
+    <!--Shows validation errors on checkout form-->
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+
+    <!--User Contact Information-->
+    <h3>Ship To</h3>
+
+    <div class="form-group">
+        <label asp-for="Name">Name:</label>
+        <input asp-for="Name" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email">Email Address:</label>
+        <input asp-for="Email" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PhoneNumber">Phone Number:</label>
+        <input asp-for="PhoneNumber" class="form-control"/>
+    </div>
+
+
+    <!--Adress Information-->
+    <br/>
+    <h3>Address</h3>
+
+    <div class="form-group">
+        <label asp-for="AddressLines1">Address Line 1:</label>
+        <input asp-for="AddressLines1" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AddressLines2">Address Line 2:</label>
+        <input asp-for="AddressLines2" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AddressLine3">Address Line 3:</label>
+        <input asp-for="AddressLine3" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="City">City:</label>
+        <input asp-for="City" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="State">State:</label>
+        <input asp-for="State" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Zip">Zip:</label>
+        <input asp-for="Zip" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Country">Country:</label>
+        <input asp-for="Country" class="form-control"/>
+    </div>
+
+    <!--Button to submit order -- takes user to a confirmation page-->
+    <br/>
+    <div class="float-end">
+        <input class="btn btn-primary" type="submit" value="Confirm Purchase"/>
+    </div>
+
+</form>

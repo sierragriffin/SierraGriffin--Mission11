@@ -1,0 +1,49 @@
+﻿<!--Layout for the administration page-->
+
+@inherits LayoutComponentBase
+
+
+<div class="bg-info text-white p-2">
+    @*<span class="navbar-brand m-lg-2">Online Book Store Administration</span>*@
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col">
+                <span class="navbar-brand m-lg-2">Online Bookstore Administration</span>
+            </div>
+
+            <div class="col-2 text-right">
+                <a class="btn btn-sm btn-primary" href="/account/logout">Log Out</a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="container-fluid">
+
+    <div class="row p-2">
+
+        <div class="col-3">
+
+            <!--Buttons go to the pages that list the books and orders-->
+            <div class="d-grid gap-2">
+                <NavLink class="btn btn-outline-primary" href="/admin/books"
+                         ActiveClass="btn-primary text-white" Match="NavLinkMatch.Prefix">Books</NavLink>
+                <NavLink class="btn btn-outline-primary" href="/admin/orders"
+                         ActiveClass="btn-primary text-white" Match="NavLinkMatch.Prefix">Orders</NavLink>
+            </div>
+
+        </div>
+
+        <div class="col">
+            @Body
+        </div>
+
+    </div>
+
+</div>
+
+<!--in Blazor, we don't use <a> tags; we use nav links which navigate within the files itself-->
